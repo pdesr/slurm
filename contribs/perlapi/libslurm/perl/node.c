@@ -44,10 +44,6 @@ node_info_to_hv(node_info_t *node_info, uint16_t node_scaling, HV *hv)
 		STORE_FIELD(hv, node_info, gres, charp);
 	if (node_info->name)
 		STORE_FIELD(hv, node_info, name, charp);
-	else {
-		Perl_warn (aTHX_ "node name missing in node_info_t");
-		return -1;
-	}
 	STORE_FIELD(hv, node_info, node_state, uint16_t);
 	if(node_info->os)
 		STORE_FIELD(hv, node_info, os, charp);
